@@ -20,6 +20,7 @@ ADIM 1:
 ADIM 2:
   Eğer state mutluysa rengi royalblue yapın, diğer durumlar için crimson yapın.
 
+
 ADIM 3:
   JSX içinde sabit yazılmış ruh halini silip `ruhHali` state dilimine göre kıvrımlı parantezler içerisinde ekleyin.
 
@@ -39,25 +40,28 @@ export default function RuhHalleri() {
 
   const mutluEt = () => {
     /* ADIM 4 */
+    setRuhHali(mutluRuhHali);
   };
   const uZ = () => {
     /* ADIM 5 */
+    setRuhHali(uzgunRuhHali);
   };
   const reset = () => {
     /* ADIM 6 */
+    setRuhHali(ilkRuhHali);
   };
 
   const stil = {
     fontSize: "1.5em",
     marginBottom: "0.3em",
-    color: "royalblue" /* ADIM 2 */,
+    color: ruhHali === mutluRuhHali ? "royalblue" : "crimson" /* ADIM 2 */,
   };
 
   return (
     <div className="widget-moods container">
       <h2>RuhHalleri</h2>
       <div id="ruhHali" style={stil}>
-        'Nasıl hissettiğimi bilmiyorum :-|'
+        {ruhHali}
       </div>{" "}
       {/* ADIM 3 */}
       <div>

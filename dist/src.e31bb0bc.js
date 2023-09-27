@@ -29108,6 +29108,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; } /*
                                                                       ADIM 2:
                                                                         Eğer state mutluysa rengi royalblue yapın, diğer durumlar için crimson yapın.
                                                                       
+                                                                      
                                                                       ADIM 3:
                                                                         JSX içinde sabit yazılmış ruh halini silip `ruhHali` state dilimine göre kıvrımlı parantezler içerisinde ekleyin.
                                                                       
@@ -29127,17 +29128,20 @@ function RuhHalleri() {
     setRuhHali = _useState2[1];
   var mutluEt = function mutluEt() {
     /* ADIM 4 */
+    setRuhHali(mutluRuhHali);
   };
   var uZ = function uZ() {
     /* ADIM 5 */
+    setRuhHali(uzgunRuhHali);
   };
   var reset = function reset() {
     /* ADIM 6 */
+    setRuhHali(ilkRuhHali);
   };
   var stil = {
     fontSize: "1.5em",
     marginBottom: "0.3em",
-    color: "royalblue" /* ADIM 2 */
+    color: ruhHali === mutluRuhHali ? "royalblue" : "crimson" /* ADIM 2 */
   };
 
   return /*#__PURE__*/_react.default.createElement("div", {
@@ -29145,7 +29149,7 @@ function RuhHalleri() {
   }, /*#__PURE__*/_react.default.createElement("h2", null, "RuhHalleri"), /*#__PURE__*/_react.default.createElement("div", {
     id: "ruhHali",
     style: stil
-  }, "'Nas\u0131l hissetti\u011Fimi bilmiyorum :-|'"), " ", /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+  }, ruhHali), " ", /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
     id: "mutluEt",
     onClick: mutluEt
   }, "Mutlu Et"), /*#__PURE__*/_react.default.createElement("button", {
